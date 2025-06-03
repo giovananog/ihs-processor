@@ -3,7 +3,7 @@
 module counter(
     input wire clock, 
     input wire clear, 
-    output reg [1:0] out 
+    output reg [1:0] out = 2'b00 
 );
 
     always @(posedge clock) begin
