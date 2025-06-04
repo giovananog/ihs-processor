@@ -63,19 +63,36 @@ module processor(
         .immediate_value(immediate_value)
     );
 
-    // 3. Registrador A
+    // // 3. Registrador A
+    // register #(16) reg_a (
+    //     .clock(clock),
+    //     .enable(reg_a_enable),
+    //     .data_in(mux_op_a_out), // Entrada do Reg A vem do MUX_op_a
+    //     .data_out(reg_a_out)
+    // );
+
+    // // 4. Registrador R (Registrador de Resultado Temporário)
+    // register #(16) reg_r (
+    //     .clock(clock),
+    //     .enable(reg_r_enable),
+    //     .data_in(alu_result), // Entrada do Reg R vem do resultado da ULA
+    //     .data_out(r_reg_out)
+    // );
+
+
     register #(16) reg_a (
-        .clock(clock),
-        .enable(reg_a_enable),
-        .data_in(mux_op_a_out), // Entrada do Reg A vem do MUX_op_a
-        .data_out(reg_a_out)
+    .clock(clock),
+    .resetn(resetn), // <--- ADICIONE ESTA CONEXÃO
+    .enable(reg_a_enable),
+    .data_in(mux_op_a_out),
+    .data_out(reg_a_out)
     );
 
-    // 4. Registrador R (Registrador de Resultado Temporário)
     register #(16) reg_r (
         .clock(clock),
+        .resetn(resetn), // <--- ADICIONE ESTA CONEXÃO
         .enable(reg_r_enable),
-        .data_in(alu_result), // Entrada do Reg R vem do resultado da ULA
+        .data_in(alu_result),
         .data_out(r_reg_out)
     );
 
@@ -94,12 +111,14 @@ module processor(
         for (i = 0; i < 8; i = i + 1) begin : reg_file_instance
             register #(16) r (
                 .clock(clock),
-                .enable(reg_file_write_enable_mask[i]), // Habilitação de escrita para cada registrador
-                .data_in(reg_file_data_in),             // Todos os registradores recebem dados da mesma fonte (Registrador R)
-                .data_out(reg_data_out[i])              // Saída individual de cada registrador
+                .resetn(resetn), // <--- ADICIONE ESTA CONEXÃO
+                .enable(reg_file_write_enable_mask[i]),
+                .data_in(reg_file_data_in),
+                .data_out(reg_data_out[i])
             );
         end
     endgenerate
+
 
     // 7. Unidade de Controle
     control_unit control_unit_inst (
@@ -139,9 +158,9 @@ module processor(
     // O barramento sai em alta impedência (Z) quando não está habilitado para escrita.
     assign bus = bus_output_enable ? mux_bus_out : 16'hZZZZ;
 
-    initial begin
-    $monitor("Time=%0t: alu_result=%h, reg_r_enable=%b, r_reg_out=%h",
-             $time, alu_result, reg_r_enable, r_reg_out);
-    end
+    // initial begin
+    // $monitor("Time=%0t: alu_result=%h, reg_r_enable=%b, r_reg_out=%h",
+    //          $time, alu_result, reg_r_enable, r_reg_out);
+    // end
 
 endmodule

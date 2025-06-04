@@ -14,19 +14,18 @@ module alu(
     parameter PASS_B_OP = 3'b100; 
 
     always @(*) begin 
-
-        $display("Time=%0t: ALU_INPUTS: op_a=%h, op_b=%h, op_select=%b", $time, op_a, op_b, op_select);
+        $display("Time=%0t (ALU 1): op_a=%b, op_b=%b, op_select:%b", $time, op_a, op_b, op_select); 
 
         case (op_select)
             ADD_OP:  result = op_a + op_b;
-            SUB_OP:  result = op_a - op_b; 
+            SUB_OP:  result = op_a - op_b;
             NAN_OP:  result = ~(op_a & op_b); 
             PASS_A_OP: result = op_a;         
             PASS_B_OP: result = op_b;         
             default: result = 16'bx;          
         endcase
 
-        $display("Time=%0t: ALU_OUTPUT: result=%h (from op_select=%b)", $time, result, op_select);
+        $display("Time=%0t (ALU 2): result=%b", $time, result); 
     end
 
 endmodule

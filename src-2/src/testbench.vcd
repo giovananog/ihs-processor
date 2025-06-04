@@ -1,0 +1,607 @@
+$date
+	Tue Jun  3 15:52:11 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module testbench $end
+$var wire 16 ! bus [15:0] $end
+$var reg 1 " clock $end
+$var reg 16 # iin [15:0] $end
+$var reg 1 $ resetn $end
+$scope module p $end
+$var wire 1 " clock $end
+$var wire 16 % iin [15:0] $end
+$var wire 16 & mux_bus_out [15:0] $end
+$var wire 16 ' mux_op_a_out [15:0] $end
+$var wire 16 ( mux_op_b_out [15:0] $end
+$var wire 16 ) reg_file_data_in [15:0] $end
+$var wire 1 $ resetn $end
+$var wire 3 * reg_write_addr [2:0] $end
+$var wire 3 + reg_read_addr_y [2:0] $end
+$var wire 3 , reg_read_addr_x [2:0] $end
+$var wire 1 - reg_r_enable $end
+$var wire 8 . reg_file_write_enable_mask [7:0] $end
+$var wire 16 / reg_data_out_r7 [15:0] $end
+$var wire 16 0 reg_data_out_r6 [15:0] $end
+$var wire 16 1 reg_data_out_r5 [15:0] $end
+$var wire 16 2 reg_data_out_r4 [15:0] $end
+$var wire 16 3 reg_data_out_r3 [15:0] $end
+$var wire 16 4 reg_data_out_r2 [15:0] $end
+$var wire 16 5 reg_data_out_r1 [15:0] $end
+$var wire 16 6 reg_data_out_r0 [15:0] $end
+$var wire 16 7 reg_a_out [15:0] $end
+$var wire 1 8 reg_a_enable $end
+$var wire 16 9 r_reg_out [15:0] $end
+$var wire 1 : mux_sel_op_b $end
+$var wire 1 ; mux_sel_op_a $end
+$var wire 1 < instruction $end
+$var wire 16 = immediate_value [15:0] $end
+$var wire 1 > current_state $end
+$var wire 2 ? counter_out [1:0] $end
+$var wire 1 @ clear_counter $end
+$var wire 1 A bus_output_enable $end
+$var wire 1 B bus_mux_select $end
+$var wire 16 C bus [15:0] $end
+$var wire 16 D alu_result [15:0] $end
+$var wire 3 E alu_op_code [2:0] $end
+$var reg 16 F instruction_reg [15:0] $end
+$scope module alu_unit $end
+$var wire 16 G op_b [15:0] $end
+$var wire 3 H op_select [2:0] $end
+$var wire 16 I op_a [15:0] $end
+$var reg 16 J result [15:0] $end
+$upscope $end
+$scope module control_unit_inst $end
+$var wire 1 " clock $end
+$var wire 16 K instruction_in [15:0] $end
+$var wire 1 $ resetn $end
+$var wire 8 L reg_file_write_enable_mask [7:0] $end
+$var wire 3 M opcode [2:0] $end
+$var wire 2 N current_state [1:0] $end
+$var reg 3 O alu_op_code [2:0] $end
+$var reg 1 B bus_mux_select $end
+$var reg 1 A bus_output_enable $end
+$var reg 1 @ clear_counter $end
+$var reg 16 P instruction [15:0] $end
+$var reg 1 ; mux_sel_op_a $end
+$var reg 1 : mux_sel_op_b $end
+$var reg 1 8 reg_a_enable $end
+$var reg 1 - reg_r_enable $end
+$var reg 3 Q reg_read_addr_x [2:0] $end
+$var reg 3 R reg_read_addr_y [2:0] $end
+$var reg 3 S reg_write_addr [2:0] $end
+$scope module write_decoder_inst $end
+$var wire 3 T reg_addr [2:0] $end
+$var reg 8 U enable_mask [7:0] $end
+$upscope $end
+$upscope $end
+$scope module cycle_counter $end
+$var wire 1 @ clear $end
+$var wire 1 " clock $end
+$var reg 2 V out [1:0] $end
+$upscope $end
+$scope module immediate_ext $end
+$var wire 16 W instruction [15:0] $end
+$var wire 16 X immediate_value [15:0] $end
+$upscope $end
+$scope module r0_inst $end
+$var wire 1 " clock $end
+$var wire 16 Y data_in [15:0] $end
+$var wire 1 Z enable $end
+$var reg 16 [ data_out [15:0] $end
+$upscope $end
+$scope module r1_inst $end
+$var wire 1 " clock $end
+$var wire 16 \ data_in [15:0] $end
+$var wire 1 ] enable $end
+$var reg 16 ^ data_out [15:0] $end
+$upscope $end
+$scope module r2_inst $end
+$var wire 1 " clock $end
+$var wire 16 _ data_in [15:0] $end
+$var wire 1 ` enable $end
+$var reg 16 a data_out [15:0] $end
+$upscope $end
+$scope module r3_inst $end
+$var wire 1 " clock $end
+$var wire 16 b data_in [15:0] $end
+$var wire 1 c enable $end
+$var reg 16 d data_out [15:0] $end
+$upscope $end
+$scope module r4_inst $end
+$var wire 1 " clock $end
+$var wire 16 e data_in [15:0] $end
+$var wire 1 f enable $end
+$var reg 16 g data_out [15:0] $end
+$upscope $end
+$scope module r5_inst $end
+$var wire 1 " clock $end
+$var wire 16 h data_in [15:0] $end
+$var wire 1 i enable $end
+$var reg 16 j data_out [15:0] $end
+$upscope $end
+$scope module r6_inst $end
+$var wire 1 " clock $end
+$var wire 16 k data_in [15:0] $end
+$var wire 1 l enable $end
+$var reg 16 m data_out [15:0] $end
+$upscope $end
+$scope module r7_inst $end
+$var wire 1 " clock $end
+$var wire 16 n data_in [15:0] $end
+$var wire 1 o enable $end
+$var reg 16 p data_out [15:0] $end
+$upscope $end
+$scope module reg_a $end
+$var wire 1 " clock $end
+$var wire 16 q data_in [15:0] $end
+$var wire 1 8 enable $end
+$var reg 16 r data_out [15:0] $end
+$upscope $end
+$scope module reg_r $end
+$var wire 1 " clock $end
+$var wire 16 s data_in [15:0] $end
+$var wire 1 - enable $end
+$var reg 16 t data_out [15:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+bx t
+bx s
+bx r
+bx q
+bx p
+0o
+bx n
+bx m
+0l
+bx k
+bx j
+0i
+bx h
+bx g
+0f
+bx e
+bx d
+0c
+bx b
+bx a
+0`
+bx _
+bx ^
+0]
+bx \
+bx [
+1Z
+bx Y
+b0xxxxxxxxx X
+bx W
+b0 V
+b1 U
+b0 T
+b0 S
+b0 R
+b0 Q
+b0 P
+b0 O
+b0 N
+b0 M
+b1 L
+bx K
+bx J
+bx I
+b0 H
+bx G
+bx F
+b0 E
+bx D
+bz C
+0B
+0A
+0@
+b0 ?
+0>
+b0xxxxxxxxx =
+x<
+0;
+0:
+bx 9
+08
+bx 7
+bx 6
+bx 5
+bx 4
+bx 3
+bx 2
+bx 1
+bx 0
+bx /
+b1 .
+0-
+b0 ,
+b0 +
+b0 *
+bx )
+bx (
+bx '
+bx &
+bx %
+0$
+bx #
+0"
+bz !
+$end
+#1
+1>
+b1 ?
+b1 N
+b1 V
+1"
+#2
+0"
+#3
+0>
+b10 ?
+b10 N
+b10 V
+1"
+#4
+0"
+#5
+1>
+b11 ?
+b11 N
+b11 V
+1"
+#6
+0"
+#7
+0>
+b0 ?
+b0 N
+b0 V
+1"
+#8
+b11100 =
+b11100 X
+0"
+b1010000000011100 #
+b1010000000011100 %
+b1010000000011100 K
+b1010000000011100 W
+1$
+#9
+b101 M
+1>
+b1010000000011100 P
+b1 ?
+b1 N
+b1 V
+1"
+#10
+0"
+#11
+0>
+b10 ?
+b10 N
+b10 V
+b11100 '
+b11100 q
+1;
+18
+1"
+#12
+0"
+#13
+1>
+b11100 D
+b11100 J
+b11100 s
+b11 ?
+b11 N
+b11 V
+b11100 7
+b11100 I
+b11100 r
+b11100 (
+b11100 G
+bx '
+bx q
+1:
+b11 E
+b11 H
+b11 O
+0;
+1-
+08
+1"
+#14
+0"
+#15
+0>
+b11100 )
+b11100 Y
+b11100 \
+b11100 _
+b11100 b
+b11100 e
+b11100 h
+b11100 k
+b11100 n
+b11100 9
+b11100 t
+b0 ?
+b0 N
+b0 V
+bx (
+bx G
+bx D
+bx J
+bx s
+1@
+0:
+b0 E
+b0 H
+b0 O
+0-
+1"
+#16
+b1010 =
+b1010 X
+0"
+b1010010000001010 #
+b1010010000001010 %
+b1010010000001010 K
+b1010010000001010 W
+#17
+b111000 D
+b111000 J
+b111000 s
+b11100 &
+b11100 (
+b11100 G
+b11100 '
+b11100 q
+b1010010000001010 P
+b11100 6
+b11100 [
+0@
+1"
+#18
+0"
+#19
+1>
+b1 ?
+b1 N
+b1 V
+1]
+0Z
+bx &
+bx '
+bx q
+b10 .
+b10 L
+b10 U
+b1 *
+b1 S
+b1 T
+b1 ,
+b1 Q
+1"
+#20
+0"
+#21
+b11100 &
+0>
+b10 ?
+b10 N
+b10 V
+b11100 5
+b11100 ^
+b1010 '
+b1010 q
+1;
+18
+1"
+#22
+0"
+#23
+1>
+b1010 7
+b1010 I
+b1010 r
+b11 ?
+b11 N
+b11 V
+b1010 (
+b1010 G
+b1010 D
+b1010 J
+b1010 s
+b11100 '
+b11100 q
+1:
+b11 E
+b11 H
+b11 O
+0;
+1-
+08
+1"
+#24
+b10000000 (
+b10000000 G
+b10000000 =
+b10000000 X
+0"
+b10000010000000 #
+b10000010000000 %
+b10000010000000 K
+b10000010000000 W
+#25
+0>
+b0 ?
+b0 N
+b0 V
+b1010 )
+b1010 Y
+b1010 \
+b1010 _
+b1010 b
+b1010 e
+b1010 h
+b1010 k
+b1010 n
+b1010 9
+b1010 t
+b11100 (
+b11100 G
+b100110 D
+b100110 J
+b100110 s
+1@
+0:
+b0 E
+b0 H
+b0 O
+0-
+1"
+#26
+0"
+#27
+b1010 &
+b1010 '
+b1010 q
+b1 M
+b10000010000000 P
+b1010 5
+b1010 ^
+0@
+1"
+#28
+0"
+#29
+1>
+b1 ?
+b1 N
+b1 V
+b10100 D
+b10100 J
+b10100 s
+b1010 (
+b1010 G
+0]
+1Z
+b11100 &
+b11100 '
+b11100 q
+b1 .
+b1 L
+b1 U
+b1 +
+b1 R
+b0 *
+b0 S
+b0 T
+b0 ,
+b0 Q
+1"
+#30
+0"
+#31
+b1010 &
+b1010 '
+b1010 q
+0>
+b1010 6
+b1010 [
+b10 ?
+b10 N
+b10 V
+18
+1"
+#32
+b0 =
+b0 X
+0"
+b1000000000000000 #
+b1000000000000000 %
+b1000000000000000 K
+b1000000000000000 W
+#33
+1>
+b11 ?
+b11 N
+b11 V
+b0 D
+b0 J
+b0 s
+b1 E
+b1 H
+b1 O
+1-
+08
+1"
+#34
+0"
+#35
+0>
+b0 )
+b0 Y
+b0 \
+b0 _
+b0 b
+b0 e
+b0 h
+b0 k
+b0 n
+b0 9
+b0 t
+b0 ?
+b0 N
+b0 V
+b10100 D
+b10100 J
+b10100 s
+1@
+b0 E
+b0 H
+b0 O
+0-
+1"
+#36
+0"
+#37
+b0 &
+b0 '
+b0 q
+b100 M
+b1000000000000000 P
+b0 6
+b0 [
+0@
+1"
+#38
+0"
+#39
+1>
+b1 ?
+b1 N
+b1 V
+b1010 D
+b1010 J
+b1010 s
+b0 (
+b0 G
+b0 +
+b0 R
+1"
+#40
+0"
