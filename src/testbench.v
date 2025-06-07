@@ -35,12 +35,12 @@ module testbench;
 
         // Instrução 1: ldi r0, #28 (101 000 0000011100)
         // Carregada em iin no tempo 8 (após o reset)
-        iin = 16'b1010000000011100;
+        iin = 16'b1010000000011100; 
         #8; 
 
         // Instrução 2: ldi r1, #10 (101 001 0000001010)
         // Carregada em iin no tempo 16
-        iin = 16'b1010010000001010;
+        iin = 16'b1010010000001010; 
         #8; 
 
         // Instrução 3: sub r0, r1 (001 000 001 0000000)
