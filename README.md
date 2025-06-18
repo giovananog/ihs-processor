@@ -5,7 +5,7 @@
 -------
 runnning:
 
-cd src
-iverilog -o a.out testbench.v
-vvp a.out
-gtkwave testbench.vcd
+1. cd src
+2. iverilog -o a.out testbench.v
+3. vvp a.out
+4. gtkwave testbench.vcd
