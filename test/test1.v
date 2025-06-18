@@ -1,4 +1,4 @@
-// test1.v
+// test4.v
 
 `include "../src/counter.v"
 `include "../src/register.v"
@@ -30,9 +30,9 @@ module testbench;
       resetn = 1'b0;
       #2 resetn = 1'b1;
 
-      #8 iin = 16'b1010000000001010;  // ldi r0, #10
-      #8 iin = 16'b1010010000000101;  // ldi r1, #5
-      #8 iin = 16'b0000000010000000;  // add r1, r0
+      #8 iin = 16'b1010010000001010;  // ldi r0, #10
+      #8 iin = 16'b1010100000000101;  // ldi r1, #5
+      #8 iin = 16'b0000000100100000;  // add r1, r0
       #8 iin = 16'b1000000000000000;  // out r1
       #8 $finish;
     end
