@@ -11,7 +11,7 @@ module testbench;
     processor p(.clock(clock), .resetn(resetn), .bus(bus));
     always #1 clock = !clock;
     initial begin
-        $dumpfile("testbench_final.vcd"); $dumpvars(0, testbench);    
+        $dumpfile("testbench.vcd"); $dumpvars(0, testbench);    
         resetn = 1'b0; #4; resetn = 1'b1;
         #300; $finish; 
     end

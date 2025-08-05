@@ -1,7 +1,6 @@
 module instruction_memory(input wire [15:0] address, output reg [15:0] instruction);
     reg [15:0] rom [0:15]; 
     initial begin
-        // CORREÇÃO DO BUG 1: A sintaxe [index] foi adicionada a cada linha.
         rom[0] <= 16'b101_000_0000000101; // 0: ldi r0, #5
         rom[1] <= 16'b101_001_0000000011; // 1: ldi r1, #3
         rom[2] <= 16'b101_010_0000000000; // 2: ldi r2, #0
